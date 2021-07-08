@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.springboot.dao.IFriendDao">
+    <resultMap id="BaseResultMap" type="com.example.springboot.dto.FriendDto">
+        <result column="age" jdbcType="INTEGER" property="age"/>
+        <result column="sex" jdbcType="VARCHAR" property="sex"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="address" jdbcType="VARCHAR" property="address"/>
+        <result column="department" jdbcType="VARCHAR" property="department"/>
+        <result column="birthplace" jdbcType="VARCHAR" property="birthplace"/>
+    </resultMap>
+    <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.example.springboot.dto.FriendDto">
+        <result column="photo" jdbcType="BLOB" property="photo"/>
+    </resultMap>
+
+
+    <select id="selectOne" resultMap="BaseResultMap" parameterType="java.lang.String">
+        select name,age,sex,address,department,birthplace from friend where name =#{name}
+    </select>
+
+    <select id="selectAll" resultMap="BaseResultMap">
+        select * from friend
+    </select>
+
+    <select id="selectImage" resultMap="BaseResultMap">
+        select photo from friend where name = #{name}
+    </select>
+
+    <update id="insertPhoto" parameterType="java.util.Map">
+        update friend set photo =#{image} where name = #{name}
+    </update>
+
+</mapper>
