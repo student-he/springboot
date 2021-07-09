@@ -29,10 +29,10 @@ public interface IFriendService {
      * @param image
      * @return
      */
-    int insertPhoto(byte[] image);
+    int insertPhoto(byte[] image,String name);
 
     /**查询照片
      * @return
      */
-    FriendDto selectImage();
+    FriendDto selectImage(String name);
 }

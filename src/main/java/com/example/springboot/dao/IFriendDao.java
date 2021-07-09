@@ -28,10 +28,10 @@ public interface IFriendDao {
      * @param image 照片
      * @return
      */
-    int insertPhoto(@Param("image") byte[] image);
+    int insertPhoto(@Param("image") byte[] image,@Param("name") String name);
 
     /**筛选照片
      * @return
      */
-    FriendDto selectImage();
+    FriendDto selectImage(@Param("name") String name);
 }

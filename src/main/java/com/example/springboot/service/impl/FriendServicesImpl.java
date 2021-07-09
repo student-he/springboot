@@ -29,13 +29,13 @@ public class FriendServicesImpl implements IFriendService {
     }
 
     @Override
-    public int insertPhoto(byte[] image) {
-        return studentDao.insertPhoto(image);
+    public int insertPhoto(byte[] image,String name) {
+        return studentDao.insertPhoto(image,name);
     }
 
     @Override
-    public FriendDto selectImage() {
-        return studentDao.selectImage();
+    public FriendDto selectImage(String name) {
+        return studentDao.selectImage(name);
     }
 
 

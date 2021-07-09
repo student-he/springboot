@@ -80,7 +80,7 @@ public class FriendController {
             bos.flush();
             byte[] data = bos.toByteArray();
             //将图片插入到数据库
-            int insertResult = studentServices.insertPhoto(data);
+            int insertResult = studentServices.insertPhoto(data,"name");
             if (insertResult == 1) {
                 result = "Upload Photo success~";
             } else {
@@ -104,7 +104,7 @@ public class FriendController {
         String result = "Download Failed~";
         try {
             //从数据库读取信息
-            FriendDto studentDto = studentServices.selectImage();
+            FriendDto studentDto = studentServices.selectImage("name");
             if (studentDto == null) {
                 result = "image is null~";
             } else {
