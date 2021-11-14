@@ -532,3 +532,67 @@ java.lang.IllegalArgumentException: Invalid character found in method name [0x16
 2021-11-14 22:35:58.535 DEBUG 4376 --- [http-nio-8081-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Sun Nov 14 22:35:58 CST 2021, status=404, error=Not Found, message=No message available,  (truncated)...]
 2021-11-14 22:35:58.562 DEBUG 4376 --- [http-nio-8081-exec-6] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
 2021-11-14 22:50:33.740  WARN 4376 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m17s94ms228µs700ns).
+2021-11-14 23:13:24.994  INFO 18156 --- [restartedMain] com.example.springboot.Application       : Starting Application using Java 1.8.0_281 on LAPTOP-RNRSNDB9 with PID 18156 (D:\Study\GitHub\SpringBoot\target\classes started by Mr He in D:\Study\GitHub\SpringBoot)
+2021-11-14 23:13:24.998  INFO 18156 --- [restartedMain] com.example.springboot.Application       : No active profile set, falling back to default profiles: default
+2021-11-14 23:13:25.050  INFO 18156 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-11-14 23:13:26.446  INFO 18156 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-11-14 23:13:26.457  INFO 18156 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-14 23:13:26.457  INFO 18156 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-11-14 23:13:26.529  INFO 18156 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-11-14 23:13:26.529  INFO 18156 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1478 ms
+2021-11-14 23:13:26.556 DEBUG 18156 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
+2021-11-14 23:13:26.557 DEBUG 18156 --- [restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/]
+2021-11-14 23:13:27.115 DEBUG 18156 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2021-11-14 23:13:27.171 DEBUG 18156 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 16 mappings in 'requestMappingHandlerMapping'
+2021-11-14 23:13:27.207 DEBUG 18156 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2021-11-14 23:13:27.218 DEBUG 18156 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2021-11-14 23:13:27.394  INFO 18156 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-11-14 23:13:27.425  INFO 18156 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2021-11-14 23:13:27.434  INFO 18156 --- [restartedMain] com.example.springboot.Application       : Started Application in 2.902 seconds (JVM running for 4.153)
+2021-11-14 23:13:29.757  INFO 18156 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-14 23:13:29.757  INFO 18156 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-11-14 23:13:29.757 DEBUG 18156 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2021-11-14 23:13:29.758 DEBUG 18156 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2021-11-14 23:13:29.758 DEBUG 18156 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2021-11-14 23:13:29.758 DEBUG 18156 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@108f7c46
+2021-11-14 23:13:29.758 DEBUG 18156 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@28e55790
+2021-11-14 23:13:29.759 DEBUG 18156 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2021-11-14 23:13:29.759  INFO 18156 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-11-14 23:13:29.764 DEBUG 18156 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/userinfo/queryById/2", parameters={}
+2021-11-14 23:13:29.768 DEBUG 18156 --- [http-nio-8081-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.springboot.controller.UserinfoController#queryById(Integer)
+2021-11-14 23:13:29.782  INFO 18156 --- [http-nio-8081-exec-1] c.example.springboot.utils.WebLogAspect  : /userinfo/queryById/2
+2021-11-14 23:13:29.782  INFO 18156 --- [http-nio-8081-exec-1] c.example.springboot.utils.WebLogAspect  : null
+2021-11-14 23:13:29.783  INFO 18156 --- [http-nio-8081-exec-1] c.example.springboot.utils.WebLogAspect  : com.example.springboot.controller.UserinfoController queryById
+2021-11-14 23:13:29.801  INFO 18156 --- [http-nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-14 23:13:29.898  INFO 18156 --- [http-nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-14 23:13:29.899 DEBUG 18156 --- [http-nio-8081-exec-1] c.e.s.dao.IUserinfoDao.queryById         : ==>  Preparing: select id, name, money, address, state, date, thumb from userinfo where id = ? 
+2021-11-14 23:13:29.916 DEBUG 18156 --- [http-nio-8081-exec-1] c.e.s.dao.IUserinfoDao.queryById         : ==> Parameters: 2(Integer)
+2021-11-14 23:13:29.934 DEBUG 18156 --- [http-nio-8081-exec-1] c.e.s.dao.IUserinfoDao.queryById         : <==      Total: 1
+2021-11-14 23:13:29.967 DEBUG 18156 --- [http-nio-8081-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-11-14 23:13:29.968 DEBUG 18156 --- [http-nio-8081-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.example.springboot.dto.Userinfo@64e16a4a]
+2021-11-14 23:13:29.980 DEBUG 18156 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-14 23:13:53.145 DEBUG 18156 --- [http-nio-8081-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/userinfo/queryByPage", parameters={masked}
+2021-11-14 23:13:53.146 DEBUG 18156 --- [http-nio-8081-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.springboot.controller.UserinfoController#queryByPage(int, int)
+2021-11-14 23:13:53.150  INFO 18156 --- [http-nio-8081-exec-5] c.example.springboot.utils.WebLogAspect  : /userinfo/queryByPage
+2021-11-14 23:13:53.151  INFO 18156 --- [http-nio-8081-exec-5] c.example.springboot.utils.WebLogAspect  : null
+2021-11-14 23:13:53.151  INFO 18156 --- [http-nio-8081-exec-5] c.example.springboot.utils.WebLogAspect  : com.example.springboot.controller.UserinfoController queryByPage
+2021-11-14 23:13:53.188 DEBUG 18156 --- [http-nio-8081-exec-5] c.e.s.dao.IUserinfoDao.queryAll_COUNT    : ==>  Preparing: SELECT count(0) FROM userinfo 
+2021-11-14 23:13:53.188 DEBUG 18156 --- [http-nio-8081-exec-5] c.e.s.dao.IUserinfoDao.queryAll_COUNT    : ==> Parameters: 
+2021-11-14 23:13:53.191 DEBUG 18156 --- [http-nio-8081-exec-5] c.e.s.dao.IUserinfoDao.queryAll_COUNT    : <==      Total: 1
+2021-11-14 23:13:53.192 DEBUG 18156 --- [http-nio-8081-exec-5] c.e.s.dao.IUserinfoDao.queryAll          : ==>  Preparing: select id, name, money, address, state, date, thumb from userinfo LIMIT ?, ? 
+2021-11-14 23:13:53.192 DEBUG 18156 --- [http-nio-8081-exec-5] c.e.s.dao.IUserinfoDao.queryAll          : ==> Parameters: 3(Integer), 3(Integer)
+2021-11-14 23:13:53.194 DEBUG 18156 --- [http-nio-8081-exec-5] c.e.s.dao.IUserinfoDao.queryAll          : <==      Total: 3
+2021-11-14 23:13:53.209 DEBUG 18156 --- [http-nio-8081-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-11-14 23:13:53.239 DEBUG 18156 --- [http-nio-8081-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [{"retCode":0,"retMsg":"查询成功","jsonArray":[{"date":"2020-10-09","address":"福建省厦门市鼓浪屿","money":"345"," (truncated)...]
+2021-11-14 23:13:53.252 DEBUG 18156 --- [http-nio-8081-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-14 23:14:45.496 DEBUG 18156 --- [http-nio-8081-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/userinfo/queryById/2", parameters={}
+2021-11-14 23:14:45.497 DEBUG 18156 --- [http-nio-8081-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.springboot.controller.UserinfoController#queryById(Integer)
+2021-11-14 23:14:45.498  INFO 18156 --- [http-nio-8081-exec-3] c.example.springboot.utils.WebLogAspect  : /userinfo/queryById/2
+2021-11-14 23:14:45.498  INFO 18156 --- [http-nio-8081-exec-3] c.example.springboot.utils.WebLogAspect  : null
+2021-11-14 23:14:45.498  INFO 18156 --- [http-nio-8081-exec-3] c.example.springboot.utils.WebLogAspect  : com.example.springboot.controller.UserinfoController queryById
+2021-11-14 23:14:45.500 DEBUG 18156 --- [http-nio-8081-exec-3] c.e.s.dao.IUserinfoDao.queryById         : ==>  Preparing: select id, name, money, address, state, date, thumb from userinfo where id = ? 
+2021-11-14 23:14:45.500 DEBUG 18156 --- [http-nio-8081-exec-3] c.e.s.dao.IUserinfoDao.queryById         : ==> Parameters: 2(Integer)
+2021-11-14 23:14:45.502 DEBUG 18156 --- [http-nio-8081-exec-3] c.e.s.dao.IUserinfoDao.queryById         : <==      Total: 1
+2021-11-14 23:14:45.503 DEBUG 18156 --- [http-nio-8081-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-11-14 23:14:45.504 DEBUG 18156 --- [http-nio-8081-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.example.springboot.dto.Userinfo@7390aff5]
+2021-11-14 23:14:45.506 DEBUG 18156 --- [http-nio-8081-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
