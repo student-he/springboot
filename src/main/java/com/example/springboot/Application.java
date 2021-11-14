@@ -2,12 +2,13 @@ package com.example.springboot;
 
 import com.example.springboot.utils.WebInterceptor;
 import org.mybatis.spring.annotation.MapperScan;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+import javax.annotation.Resource;
 
 /**
  * @author zhengwei he
@@ -22,7 +23,7 @@ public class Application {
     @Component
     public static class InterceptorConfig implements WebMvcConfigurer {
 
-        @Autowired
+        @Resource
         private WebInterceptor interceptorTest;
 
         @Override
@@ -30,7 +31,6 @@ public class Application {
             registry.addInterceptor(interceptorTest)
                     //需要拦截的请求
                     .addPathPatterns("/test/methA")
-
                     //不需要拦截的请求
                     .excludePathPatterns("/test/methB");
         }

@@ -2,12 +2,16 @@ package com.example.springboot.controller;
 
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.example.springboot.dto.FriendDto;
 import com.example.springboot.service.IFriendService;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.annotation.Resource;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -23,41 +27,61 @@ import java.util.List;
 public class FriendController {
 
     // 基于构造函数的依赖注入
-    private final IFriendService studentServices;
+/*    private final IFriendService friendService;
 
-    public FriendController(IFriendService studentServices) {
-        this.studentServices = studentServices;
-    }
+    public FriendController(IFriendService friendService) {
+        this.friendService = friendService;
+    }*/
 
     /*
     //基于Setter的依赖注入
-    private StudentServices studentServices;
+    private IFriendService friendService;
     @Autowired
-    public void setStudentServices(StudentServices studentServices){
-        this.studentServices = studentServices;
+    public void setStudentServices(IFriendService friendService){
+        this.friendService = friendService;
     }
     */
 
 
 
 
-  /*  //基于属性的依赖注入
+    //基于属性的依赖注入
     @Resource
-    private StudentServices studentServices;*/
+    private IFriendService friendService;
 
 
     @RequestMapping("/findOne")
     public String findOne(String name) {
-        FriendDto students = studentServices.selectOne(name);
+        FriendDto students = friendService.selectOne(name);
         String json = JSON.toJSONString(students);
         return json;
     }
 
     @RequestMapping("/findAll")
     public String findAll() {
-        List<FriendDto> students = studentServices.selectAll();
+        List<FriendDto> students = friendService.selectAll();
         String json = JSON.toJSONString(students);
         return json;
+    }
+
+    /**
+     * 分页查询
+     *
+     * @param pageNum  页码
+     * @param pageSize 页面大小
+     * @return 查询结果
+     */
+    @PostMapping("/queryByPage")
+    public JSONObject queryByPage(@RequestParam("pageNum") int pageNum, @RequestParam("pageSize") int pageSize) {
+        JSONObject queryResult = new JSONObject();
+        if (pageNum > 0 && pageSize > 0) {
+            queryResult = this.friendService.queryByPage(pageNum, pageSize);
+        } else {
+            queryResult.put("retCode", 1);
+            queryResult.put("retMsg", "查询失败");
+            queryResult.put("jsonArray", null);
+        }
+        return queryResult;
     }
 
     /**
@@ -80,7 +104,7 @@ public class FriendController {
             bos.flush();
             byte[] data = bos.toByteArray();
             //将图片插入到数据库
-            int insertResult = studentServices.insertPhoto(data,"name");
+            int insertResult = friendService.insertPhoto(data,"name");
             if (insertResult == 1) {
                 result = "Upload Photo success~";
             } else {
@@ -104,7 +128,7 @@ public class FriendController {
         String result = "Download Failed~";
         try {
             //从数据库读取信息
-            FriendDto studentDto = studentServices.selectImage("name");
+            FriendDto studentDto = friendService.selectImage("name");
             if (studentDto == null) {
                 result = "image is null~";
             } else {

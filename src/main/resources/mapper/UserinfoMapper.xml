@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.springboot.dao.IUserinfoDao">
+
+    <resultMap type="com.example.springboot.dto.Userinfo" id="UserinfoMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="money" column="money" jdbcType="VARCHAR"/>
+        <result property="address" column="address" jdbcType="VARCHAR"/>
+        <result property="state" column="state" jdbcType="VARCHAR"/>
+        <result property="date" column="date" jdbcType="VARCHAR"/>
+        <result property="thumb" column="thumb" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="UserinfoMap">
+        select id,
+               name,
+               money,
+               address,
+               state, date, thumb
+        from userinfo
+        where id = #{id}
+    </select>
+
+    <!--分页查询-->
+    <select id="queryAll" resultMap="UserinfoMap">
+        select id,
+               name,
+               money,
+               address,
+               state, date, thumb
+        from userinfo
+    </select>
+
+    <!--统计总行数-->
+    <select id="count" resultType="java.lang.Long">
+        select count(1)
+        from userinfo
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into userinfo(name, money, address, state, date, thumb)
+        values (#{name}, #{money}, #{address}, #{state}, #{date}, #{thumb})
+    </insert>
+
+    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into userinfo(name, money, address, state, date, thumb)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.name}, #{entity.money}, #{entity.address}, #{entity.state}, #{entity.date}, #{entity.thumb})
+        </foreach>
+    </insert>
+
+    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into userinfo(name, money, address, state, date, thumb)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.name}, #{entity.money}, #{entity.address}, #{entity.state}, #{entity.date}, #{entity.thumb})
+        </foreach>
+        on duplicate key update
+        name = values(name),
+        money = values(money),
+        address = values(address),
+        state = values(state),
+        date = values(date),
+        thumb = values(thumb)
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update userinfo
+        <set>
+            <if test="name != null and name != ''">
+                name = #{name},
+            </if>
+            <if test="money != null and money != ''">
+                money = #{money},
+            </if>
+            <if test="address != null and address != ''">
+                address = #{address},
+            </if>
+            <if test="state != null and state != ''">
+                state = #{state},
+            </if>
+            <if test="date != null and date != ''">
+                date = #{date},
+            </if>
+            <if test="thumb != null and thumb != ''">
+                thumb = #{thumb},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete
+        from userinfo
+        where id = #{id}
+    </delete>
+
+</mapper>
+
