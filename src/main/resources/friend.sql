@@ -34,6 +34,6 @@ CREATE TABLE `friend`  (
 -- ----------------------------
 -- Records of friend
 -- ----------------------------
-INSERT INTO `friend` VALUES (18, '女', '颜小琼', '重庆', '数学', '重庆', NULL);
+
 
 SET FOREIGN_KEY_CHECKS = 1;
