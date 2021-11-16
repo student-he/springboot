@@ -5,7 +5,10 @@ import com.alibaba.fastjson.JSONObject;
 import com.example.springboot.dao.IUserinfoDao;
 import com.example.springboot.dto.Userinfo;
 import com.example.springboot.service.IUserinfoService;
+import com.example.springboot.utils.PageHelperUtil;
+import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -46,9 +49,9 @@ public class UserinfoServiceImpl implements IUserinfoService {
         JSONObject queryResult = new JSONObject();
         JSONArray jsonArray = new JSONArray();
         try {
-            PageHelper.startPage(pageNum, pageSize);
+            Page page =PageHelper.startPage(pageNum, pageSize);
             List<Userinfo> queryList = this.userinfoDao.queryAll();
-
+            PageInfo pageInfo= PageHelperUtil.insertPageInfo(queryList,page);
             if (!queryList.isEmpty() && queryList.size() > 0) {
 
                 for (int i = 0; i < queryList.size(); i++) {
@@ -67,12 +70,13 @@ public class UserinfoServiceImpl implements IUserinfoService {
             } else {
 
             }
-
+            queryResult.put("totalNum", pageInfo.getTotal());
             queryResult.put("retCode", 0);
             queryResult.put("retMsg", "查询成功");
             queryResult.put("jsonArray", jsonArray);
 
         } catch (Exception e) {
+            queryResult.put("totalNum", 0);
             queryResult.put("retCode", 1);
             queryResult.put("retMsg", "查询成功");
             queryResult.put("jsonArray", jsonArray);

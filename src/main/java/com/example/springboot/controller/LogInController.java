@@ -18,5 +18,4 @@ public class LogInController {
         res.put("retMsg","登录成功");
         return res;
     }
-
 }
