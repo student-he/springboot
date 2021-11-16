@@ -2,9 +2,8 @@ package com.example.springboot.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.example.springboot.dto.Userinfo;
-import com.example.springboot.service.IFriendService;
 import com.example.springboot.service.IUserinfoService;
-import com.example.springboot.utils.MyLog;
+import com.example.springboot.utils.LogUtil;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -36,7 +35,7 @@ public class UserinfoController {
     @PostMapping("/queryByPage")
     public JSONObject queryByPage(@RequestParam("pageNum") int pageNum, @RequestParam("pageSize") int pageSize) {
         JSONObject queryResult = new JSONObject();
-        MyLog.info("请求参数信息，pageNum" + pageNum, ",pageSize:" + pageSize);
+        LogUtil.info("请求参数信息，pageNum" + pageNum, ",pageSize:" + pageSize);
         if (pageNum > 0 && pageSize > 0) {
             queryResult = this.userinfoService.queryByPage(pageNum, pageSize);
         } else {
@@ -44,7 +43,7 @@ public class UserinfoController {
             queryResult.put("totalNum", 1);
             queryResult.put("retMsg", "查询失败");
             queryResult.put("jsonArray", null);
-            MyLog.error("请求参数格式不正确");
+            LogUtil.error("请求参数格式不正确");
         }
         return queryResult;
     }

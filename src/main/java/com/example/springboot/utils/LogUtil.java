@@ -6,7 +6,7 @@ import org.apache.logging.log4j.Logger;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 
-public class MyLog {
+public class LogUtil {
 
     private static Logger logger = LogManager.getLogger();
 
