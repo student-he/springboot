@@ -2,6 +2,7 @@ package lesson.file;
 
 import lombok.extern.slf4j.Slf4j;
 
+import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -15,15 +16,17 @@ import java.io.IOException;
 public class BufferedInputStreamDemo {
     public static void main(String[] args) {
         FileInputStream fileInputStream = null;
+        BufferedInputStream bufferedInputStream;
         FileOutputStream fileOutputStream = null;
         BufferedOutputStream bufferedOutputStream = null;
         try {
             fileInputStream = new FileInputStream("D:\\Study\\Java\\springboot\\src\\main\\resources\\file\\a.txt");
+            bufferedInputStream = new BufferedInputStream(fileInputStream);
             fileOutputStream = new FileOutputStream("fileoutputstream.txt");
             bufferedOutputStream = new BufferedOutputStream(fileOutputStream);
             byte[] bytesInfo = new byte[1024];
             int len;
-            while ((len = fileInputStream.read(bytesInfo)) != -1) {
+            while ((len = bufferedInputStream.read(bytesInfo)) != -1) {
                 bufferedOutputStream.write(bytesInfo, 0, len);
             }
         } catch (FileNotFoundException e) {
