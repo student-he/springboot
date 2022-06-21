@@ -6,6 +6,9 @@ import org.apache.logging.log4j.Logger;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 
+/**
+ * @author Mr He
+ */
 public class LogUtil {
 
     private static Logger logger = LogManager.getLogger();

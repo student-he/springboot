@@ -5,6 +5,9 @@ import com.github.pagehelper.PageInfo;
 
 import java.util.List;
 
+/**
+ * @author Mr He
+ */
 public class PageHelperUtil {
 
     /**

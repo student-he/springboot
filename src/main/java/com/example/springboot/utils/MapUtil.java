@@ -7,6 +7,9 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
+/**
+ * @author Mr He
+ */
 public class MapUtil {
 
     static Map<String, Object> jsonToMap() {
