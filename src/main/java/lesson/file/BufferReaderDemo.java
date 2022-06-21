@@ -17,7 +17,6 @@ public class BufferReaderDemo {
         try {
             bufferedReader = new BufferedReader(new FileReader("D:\\Study\\Java\\springboot\\src\\main\\resources\\file\\c.txt"));
             bufferedWriter = new BufferedWriter(new FileWriter("D:\\Study\\Java\\springboot\\src\\main\\resources\\file\\d.txt"));
-
             char[] chars = new char[1024];
             int len;
             //read(char cbuf[]) 将字符读入数组。此方法将阻塞，直到有输入可用、发生I/O错误或到达流的末端。
@@ -26,7 +25,6 @@ public class BufferReaderDemo {
             while ((len = bufferedReader.read(chars)) != -1) {
                 bufferedWriter.write(chars, 0, len);
             }
-
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
