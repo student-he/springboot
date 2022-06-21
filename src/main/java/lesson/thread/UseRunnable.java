@@ -1,5 +1,8 @@
 package lesson.thread;
 
+/**
+ * @author Mr He
+ */
 public class UseRunnable implements Runnable {
 
     //票
