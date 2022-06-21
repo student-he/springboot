@@ -18,13 +18,11 @@ public class BufferReaderDemo {
             bufferedReader = new BufferedReader(new FileReader("D:\\Study\\Java\\springboot\\src\\main\\resources\\file\\c.txt"));
             bufferedWriter = new BufferedWriter(new FileWriter("D:\\Study\\Java\\springboot\\src\\main\\resources\\file\\d.txt"));
 
- /*           //读取22个字符
-            char[] text = new char[22];
-            bufferedReader.read(text);
-            System.out.println(text);*/
-
             char[] chars = new char[1024];
             int len;
+            //read(char cbuf[]) 将字符读入数组。此方法将阻塞，直到有输入可用、发生I/O错误或到达流的末端。
+            //参数:cbuf -目标缓冲区
+            //返回:读取的字符数，如果到达流的末尾，则为-1
             while ((len = bufferedReader.read(chars)) != -1) {
                 bufferedWriter.write(chars, 0, len);
             }
